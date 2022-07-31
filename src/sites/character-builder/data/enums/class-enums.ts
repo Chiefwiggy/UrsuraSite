@@ -1,0 +1,12 @@
+export enum CLASS_NAMES {
+    SCRIBE,
+    SAVANT,
+    TETHERED,
+    FIGHTER,
+    EXPLORER,
+    KNAVE,
+    RIDER,
+    TECHNICIAN,
+    ARTISAN,
+    ENVOY
+}

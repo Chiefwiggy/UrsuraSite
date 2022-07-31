@@ -1,0 +1,129 @@
+.b-CharacterSheet {
+    display: flex;
+    flex-direction: column;
+}
+
+.b-ContentBox {
+    margin: 0 64px;
+}
+
+
+.b-PrincipalStatsBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: column;
+    width: 384px;
+    margin: 12px 20px;
+    
+    .b-MainStatBox {   
+        
+        padding: 0px;
+        background-color: white;
+
+        .b-MainStatName {
+            text-transform: capitalize;
+
+            .b-affinity {
+                color: green;
+            }
+            
+            .b-double-affinity {
+                color: lime;
+            }
+            
+            .b-aversion {
+                color: red;
+            }
+            
+            .b-double-aversion {
+                color: crimson;
+            }
+        }
+
+        .b-MainStatValue {
+            padding: 8px;
+        }
+
+        .b-XPTooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            
+            .b-TooltipContent {
+                visibility: hidden;
+                width: 180px;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -90px;
+                text-align: center;
+                background-color: white;
+                padding: 5px 0;
+                border-radius: 6px;
+                border: 2px solid black;
+
+                position: absolute;
+                z-index: 1;
+            }
+        }
+
+        
+    }
+    .b-MainStatBox:hover {
+        .b-XPTooltip {
+            .b-TooltipContent {
+                visibility: visible;
+            }
+            
+        }
+    }
+    
+}
+
+.b-HealthBox {
+
+    display: flex;
+
+    .b-StatBox-TwoUnder {
+        width: 200px;
+        padding: 12px;
+
+        .b-StatBox-TwoUnder-Wrapper {
+            border: 1px solid black;
+            padding-bottom: 12px;
+
+
+            .b-StatBox-TwoUnder-Name {
+                font-size: 1.2rem;
+            }
+        }
+
+        .b-StatBox-TwoUnder-After {
+            display: flex;
+            justify-content: space-around;
+            margin-top: -17px;
+
+            .b-StatBox-TwoUnder-AfterElement {
+                .b-StatBox-TwoUnder-AfterElement-Title {
+                    font-size: 0.8rem;
+                }
+
+                .b-StatBox-TwoUnder-AfterElement-Value {
+                    border: 1px solid black;
+                    border-top: none;
+                    width: 60px;
+                    
+                }
+            }
+        }
+    }
+
+}
+
+.b-InfoBoxes {
+    display: flex;
+}
+
+
+
+

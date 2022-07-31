@@ -1,27 +1,36 @@
 import { UserContext } from "./UserContext"
-import { useState } from "react"
+import { useState } from "react";
+import App from "../../../App";
+import ProviderWrapper from "../../pages/ProviderWrapper";
 
 const UserProvider = ({user, children}) => {
-    const [currentUser, setCurrentUser] = useState({
-        loggedIn: false,
-        username: undefined,
-        email: undefined,
-        _id: undefined,
-        token: undefined
-    });
+
+    const [loggedIn, setLoggedIn] = useState(false);
 
     const LogoutUser = () => {
-        setCurrentUser({
-            loggedIn: false,
-            username: undefined,
-            email: undefined,
-            _id: undefined,
-            token: undefined
-        })
+        sessionStorage.clear()
+        setLoggedIn(false);
+    }
+
+    const LoginUser = (user_data) => {
+        sessionStorage.setItem("userToken", user_data.token);
+        sessionStorage.setItem("userName", user_data.response.username);
+        sessionStorage.setItem("userID", user_data.response._id);
+        sessionStorage.setItem("userEmail", user_data.response.email)
+        setLoggedIn(true);
+    }
+
+    const GetUserData = () => {
+        return {
+            userToken: sessionStorage.getItem("userToken"),
+            userName: sessionStorage.getItem("userName"),
+            userID: sessionStorage.getItem("userID"),
+            userEmail: sessionStorage.getItem("userEmail")
+        }
     }
 
     return (
-        <UserContext.Provider value={{currentUser, setCurrentUser, LogoutUser}}>
+        <UserContext.Provider value={{LogoutUser, LoginUser, GetUserData, loggedIn}}>
             {children}
         </UserContext.Provider>
     )

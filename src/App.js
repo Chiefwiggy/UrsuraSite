@@ -6,26 +6,31 @@ import NotFound from './shared/pages/NotFound';
 import BuilderHome from './sites/character-builder/pages/BuilderHome';
 import AccountHome from './sites/account-management/pages/AccountHome';
 import LoginPage from './sites/account-management/pages/LoginPage';
+import UserProvider from './shared/hooks/user-hook/UserProvider';
+import LogoutPage from './sites/account-management/pages/LogoutPage';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider
+} from "@apollo/client";
+
+import PageWrapper from './shared/pages/PageWrapper';
+import { useEffect, useState } from 'react';
+import ProviderWrapper from './shared/pages/ProviderWrapper';
+
 
 function App() {
+
+
+  
+
+  
+
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<ReferenceHome />} />
-          <Route path="spells" element={<SpellsHome />}/>
-          <Route path="builder" element={<BuilderHome />}/>
-          <Route path="account">
-              <Route index element={<AccountHome />}/>
-              <Route path="login" element={<LoginPage />} />
-              <Route path="logout" element={<></>}/>
-          </Route>
-
-
-
-          <Route path="*" element={<NotFound />}/>
-        </Routes>
-      </BrowserRouter>
+        <UserProvider>
+          <ProviderWrapper />
+        </UserProvider>
     </div>
   );
 }

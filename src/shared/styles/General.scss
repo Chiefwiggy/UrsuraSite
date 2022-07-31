@@ -1,0 +1,33 @@
+.success-text {
+    color: green;
+}
+
+.failure-text {
+    color: red;
+}
+
+.title-text {
+    text-transform: capitalize;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+   display: flex;
+   flex-direction: column;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-right {
+    text-align: right;
+}

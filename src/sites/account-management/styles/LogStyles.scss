@@ -1,0 +1,41 @@
+
+.LoginPage {
+    background-color: lightblue;
+    height: 95vh;
+
+    .LoginPageDivider {
+        padding-top: 20vh;
+
+
+        .LogInput {
+            padding: 12px 0;
+            margin: 12px;
+            display: flex;
+            flex-direction: column;
+            min-height: 60px;
+            flex-grow: 1;
+            align-items: center;
+
+            .LogTitle {
+                margin: 0;
+            }
+
+            .ErrorText {
+                color: red;
+            }
+
+            .Buffer {
+                visibility: hidden;
+            }
+
+            .LogInputTextBox {
+                border: none;
+                padding: 12px;
+                max-width: 200px;
+                width: 100%;
+            }
+        }
+
+    }
+
+}

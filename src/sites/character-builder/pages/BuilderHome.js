@@ -1,6 +1,5 @@
 import StandardPage from "../layouts/StandardPage";
 
-
 const BuilderHome = () => {
     return (
         <StandardPage>

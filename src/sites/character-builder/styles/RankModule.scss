@@ -1,0 +1,87 @@
+.b-Ranks-Gridbox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    direction: rtl;
+    
+
+    .b-RankCategory:first-child {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .b-RankCategory {
+        direction: ltr;
+    }
+
+
+}
+
+
+
+.b-RankTooltip {
+    visibility: hidden;
+    position: absolute;
+    width: 166px;
+}
+
+.b-RankEntry:hover .b-RankTooltip {
+    visibility: visible;
+}
+
+.b-RankEntry {
+    padding-bottom: 4px;
+}
+
+.b-RankTooltip-Container {
+    height: 6px;
+    width: 85%;
+    background-color: #e0e0de;
+    border-radius: 50px;
+}
+
+.b-RankTooltip-Fill {
+    height: 100%;
+    background-color: rgba(128, 0, 128, 0.323);
+    border-radius: inherit;
+}
+
+.b-RankTooltip-Label {
+  font-size: 0.7rem;
+  align-self: flex-start;
+  padding-left: 15%;
+  background-color: white;
+ 
+  
+}
+
+.b-RankNameText {
+    font-size: 0.92rem;
+}
+
+.b-RankTooltip-Flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 4px;
+}
+
+
+.b-Skills-Gridbox {
+    display: flex;
+    height: 55%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: right;
+    
+
+    .b-RankNameText {
+        font-size: 0.92rem;
+    }
+}
+
+.b-SkillsModule {
+    margin: 12px 60px 12px 30px;
+}
+
+
