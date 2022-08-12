@@ -16,6 +16,7 @@ import RanksModule from './RanksModule'
 import ".//../styles/CharacterBuilderGeneral.scss"
 import SkillsModule from './SkillsModule'
 import ItemsModule from './ItemsModule'
+import { SpToRank } from '../helpers/ConvertSPToRank'
 
 
 const CharacterSheet = () => {
@@ -69,7 +70,8 @@ const CharacterSheet = () => {
         setOffenseInfo([
             character.stats.finesse.value + Math.floor(character.stats.luck.value*0.5),
             character.stats.luck.value+Math.floor(character.stats.finesse.value*0.5),
-            character.stats.agility.value - drag
+            character.stats.agility.value - drag,
+            character.stats.mind.value  
         ])
 
         setBasicInfo([
@@ -79,11 +81,12 @@ const CharacterSheet = () => {
         ])
 
         setDefenseInfo([
-            6+character.ranks.mobility.evasion+character.stats.luck.value*Math.floor(0.5+character.stats.agility.value)+character.bonuses.dodge-drag,
-            6+character.ranks.mobility.evasion+character.stats.luck.value*Math.floor(0.5+character.stats.agility.value)+character.bonuses.evasion-drag,
-            character.stats.finesse.value+character.ranks.defenses.parry,
-            Math.floor(character.stats.vitality.value*0.5+character.race.bonuses.physical_resistance+character.ranks.defenses.toughness+pDEFItem),
-            Math.floor(character.stats.presence.value*0.5+character.race.bonuses.magical_resistance+character.ranks.defenses.abjuration+mDEFItem),
+            // 6+ SpToRank(character.ranks.mobility.evasion)+character.stats.luck.value*Math.floor(0.5+character.stats.agility.value)+character.bonuses.dodge-drag,
+            6+SpToRank(character.ranks.mobility.evasion)+Math.floor(0.5*character.stats.luck.value)+character.stats.agility.value+character.bonuses.evasion-drag,
+            6+SpToRank(character.ranks.mobility.evasion)+Math.floor(0.5*character.stats.luck.value)+character.stats.agility.value+character.bonuses.evasion-drag,
+            character.stats.finesse.value+SpToRank(character.ranks.defenses.parry),
+            Math.floor(character.stats.vitality.value*0.5+character.race.bonuses.physical_resistance+SpToRank(character.ranks.defenses.toughness)+pDEFItem),
+            Math.floor(character.stats.presence.value*0.5+character.race.bonuses.magical_resistance+SpToRank(character.ranks.defenses.abjuration)+mDEFItem),
         ])
 
 

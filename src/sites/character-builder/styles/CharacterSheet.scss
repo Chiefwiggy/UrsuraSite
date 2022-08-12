@@ -80,45 +80,7 @@
     
 }
 
-.b-HealthBox {
 
-    display: flex;
-
-    .b-StatBox-TwoUnder {
-        width: 200px;
-        padding: 12px;
-
-        .b-StatBox-TwoUnder-Wrapper {
-            border: 1px solid black;
-            padding-bottom: 12px;
-
-
-            .b-StatBox-TwoUnder-Name {
-                font-size: 1.2rem;
-            }
-        }
-
-        .b-StatBox-TwoUnder-After {
-            display: flex;
-            justify-content: space-around;
-            margin-top: -17px;
-
-            .b-StatBox-TwoUnder-AfterElement {
-                .b-StatBox-TwoUnder-AfterElement-Title {
-                    font-size: 0.8rem;
-                }
-
-                .b-StatBox-TwoUnder-AfterElement-Value {
-                    border: 1px solid black;
-                    border-top: none;
-                    width: 60px;
-                    
-                }
-            }
-        }
-    }
-
-}
 
 .b-InfoBoxes {
     display: flex;

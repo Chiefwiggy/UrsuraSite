@@ -6,9 +6,9 @@ export const CLASS_REFERENCE = {
         scribe: {
             id: CLASS_NAMES.SCRIBE,
             modifiers: {
-                health: 1,
-                stamina: 2.5,
-                tether: 2
+                health: 2.5,
+                stamina: 3.5,
+                tether: 8.0
             }
         },
         savant: {
