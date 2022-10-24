@@ -21,7 +21,7 @@ export const SampleCharacter = {
     info: {
         character_name: "Savant Minion",
         movement: 3,
-        xp: 511,
+        xp: 9511,
         weight: 0,
         size: CREATURE_SIZE.MEDIUM,
         active_class: CLASS_NAMES.SCRIBE,
@@ -29,7 +29,11 @@ export const SampleCharacter = {
     },
     stats: {
         might: {
+<<<<<<< HEAD
             value: 20,
+=======
+            value: 12,
+>>>>>>> 4ea0ea20e5e1d2f78b4a08062c8a864ada9cb5f4
             disposition: DISPOSITION.AFFINITY
         },
         finesse: {
@@ -37,6 +41,7 @@ export const SampleCharacter = {
             disposition: DISPOSITION.NEUTRAL
         },
         agility: {
+<<<<<<< HEAD
             value: 1,
             disposition: DISPOSITION.NEUTRAL
         },
@@ -66,6 +71,37 @@ export const SampleCharacter = {
         },
         luck: {
             value: 1,
+=======
+            value: 30,
+            disposition: DISPOSITION.NEUTRAL
+        },
+        vitality: {
+            value: 30,
+            disposition: DISPOSITION.NEUTRAL
+        },
+        endurance: {
+            value: 30,
+            disposition: DISPOSITION.NEUTRAL
+        },
+        knowledge: {
+            value: 14,
+            disposition: DISPOSITION.NEUTRAL
+        },
+        mind: {
+            value: 30,
+            disposition: DISPOSITION.NEUTRAL
+        },
+        presence: {
+            value: 30,
+            disposition: DISPOSITION.NEUTRAL
+        },
+        grace: {
+            value: 13,
+            disposition: DISPOSITION.NEUTRAL
+        },
+        luck: {
+            value: 30,
+>>>>>>> 4ea0ea20e5e1d2f78b4a08062c8a864ada9cb5f4
             disposition: DISPOSITION.NEUTRAL
         }
     },
@@ -95,13 +131,13 @@ export const SampleCharacter = {
             esoteric: 0
         },
         defenses: {
-            parry: 0,
-            shields: 0,
+            parry: 780,
+            shields: 780,
             armor: 0,
             poise: 0,
             resolve: 0,
-            toughness: 0,
-            abjuration: 0
+            toughness: 780,
+            abjuration: 780
         },
         magic: {
             attunement: 766,
@@ -123,7 +159,7 @@ export const SampleCharacter = {
             flight: 0,
             piloting: 0,
             reflex: 0,
-            evasion: 0,
+            evasion: 780,
             gambit: 0,
         },
         trade: {
@@ -177,9 +213,9 @@ export const SampleCharacter = {
     bonuses: {
         stamina: 0,
         health: 0,
-        refresh: 0,
+        refresh: 3,
         tether: 0,
-        tether_rest: 0,
+        tether_refresh: 0,
         evasion: 0,
         dodge: 0
     }

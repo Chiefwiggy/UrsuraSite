@@ -29,7 +29,6 @@ const RanksModule = ({
                                                 return name1.localeCompare(name2);
                                             }
                                         }).map(([rank_name, rank_data]) => {
-                                            console.log(rank_name, rank_data);
                                             return (
                                                 <RankTooltip rank_name={rank_name} rank_data={rank_data} />
                                             )

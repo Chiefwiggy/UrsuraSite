@@ -7,3 +7,109 @@
     width: 180px;
     margin: 12px;
 }
+
+.b-ProgressBarGrid {
+    display: grid;
+}
+
+.b-ProgressBar-Top {
+    z-index: 2;
+}
+
+.b-ProgressBar-Bottom {
+    z-index: 1;
+}
+
+.b-Stamina-Primary {
+    color: green;
+}
+
+.b-Health-Primary {
+    color: crimson;
+}
+
+.b-Stamina-Secondary {
+    color: greenyellow;
+}
+
+
+.b-Tether-Primary {
+    color: purple;
+}
+
+.b-Undeath-Primary {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.b-Undeath-Secondary {
+    color: rgba(127,0,0,0.4) !important;
+    &::after {
+        content: "Dying";
+    }
+
+}
+
+.b-Tether-Secondary {
+    color: plum;
+}
+
+.b-ProgressBar-Background {
+    z-index: 0;
+    color: rgba(0,0,0,0.2);
+}
+
+.b-ProgressBar-Text {
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 96px;
+    flex-direction: column;
+    width: 96px;
+}
+
+.b-ProgressBar-Input {
+    background-color: transparent;
+    height: 1.6rem;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 50%;
+    align-self: center;
+    margin-top: 4px;
+    padding: 0;
+    border-color: rgba(0,0,0,0.2);
+    padding: 3px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.b-ProgressBarLayered {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.b-Progress-Flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-HealthBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

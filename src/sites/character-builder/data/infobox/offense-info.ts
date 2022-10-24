@@ -15,5 +15,10 @@ export const OFFENSE_INFO = [
         name: "Attack Speed",
         prefix: "",
         postfix: ""
+    },
+    {
+        name: "Spell Set Save",
+        prefix: "+",
+        postfix: ""
     }
 ]
