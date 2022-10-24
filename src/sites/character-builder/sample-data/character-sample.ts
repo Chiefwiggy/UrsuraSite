@@ -29,43 +29,43 @@ export const SampleCharacter = {
     },
     stats: {
         might: {
-            value: 2,
+            value: 20,
             disposition: DISPOSITION.AFFINITY
         },
         finesse: {
-            value: 3,
+            value: 30,
             disposition: DISPOSITION.NEUTRAL
         },
         agility: {
-            value: 2,
+            value: 1,
             disposition: DISPOSITION.NEUTRAL
         },
         vitality: {
-            value: 2,
+            value: 1,
             disposition: DISPOSITION.NEUTRAL
         },
         endurance: {
-            value: 2,
+            value: 1,
             disposition: DISPOSITION.NEUTRAL
         },
         knowledge: {
-            value: 4,
+            value: 1,
             disposition: DISPOSITION.NEUTRAL
         },
         mind: {
-            value: 5,
+            value: 1,
             disposition: DISPOSITION.NEUTRAL
         },
         presence: {
-            value: 4,
+            value: 1,
             disposition: DISPOSITION.NEUTRAL
         },
         grace: {
-            value: 3,
+            value: 1,
             disposition: DISPOSITION.NEUTRAL
         },
         luck: {
-            value: 2,
+            value: 1,
             disposition: DISPOSITION.NEUTRAL
         }
     },

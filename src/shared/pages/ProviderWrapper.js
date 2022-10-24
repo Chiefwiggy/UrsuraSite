@@ -18,6 +18,7 @@ import useUser from '../hooks/user-hook/useUser';
 import { createHttpLink } from 'apollo-link-http';
 import MyCharacters from '../../sites/character-builder/pages/MyCharacters'
 import NewCharacter from '../../sites/character-builder/pages/NewCharacter'
+import TalentsPage from '../../sites/character-builder/pages/dev/TalentsPage'
 
 
 
@@ -72,6 +73,9 @@ const ProviderWrapper = ({children}) => {
                     <Route index element={<BuilderHome />}/>
                     <Route path="my-characters" element={<MyCharacters/>}/>
                     <Route path="new" element={<NewCharacter />}/>
+                    <Route path="dev">
+                        <Route path="talents" element={<TalentsPage />}/>
+                    </Route>
                   </Route>
                   <Route path="account">
                       <Route index element={<AccountHome />}/>

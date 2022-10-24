@@ -14,6 +14,7 @@ const SiteBar = ({currentPage}) => {
             <Link to="/spells">Spells</Link>
             <Link to="/builder">Character Sheets</Link>
             <Link to="/builder/my-characters">Character Sheets</Link>
+            <Link to="/builder/dev/talents">Talents</Link>
             {
                 loggedIn
                 ?
