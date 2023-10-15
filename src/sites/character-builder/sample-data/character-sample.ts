@@ -29,11 +29,7 @@ export const SampleCharacter = {
     },
     stats: {
         might: {
-<<<<<<< HEAD
             value: 20,
-=======
-            value: 12,
->>>>>>> 4ea0ea20e5e1d2f78b4a08062c8a864ada9cb5f4
             disposition: DISPOSITION.AFFINITY
         },
         finesse: {
@@ -41,7 +37,6 @@ export const SampleCharacter = {
             disposition: DISPOSITION.NEUTRAL
         },
         agility: {
-<<<<<<< HEAD
             value: 1,
             disposition: DISPOSITION.NEUTRAL
         },
@@ -71,37 +66,6 @@ export const SampleCharacter = {
         },
         luck: {
             value: 1,
-=======
-            value: 30,
-            disposition: DISPOSITION.NEUTRAL
-        },
-        vitality: {
-            value: 30,
-            disposition: DISPOSITION.NEUTRAL
-        },
-        endurance: {
-            value: 30,
-            disposition: DISPOSITION.NEUTRAL
-        },
-        knowledge: {
-            value: 14,
-            disposition: DISPOSITION.NEUTRAL
-        },
-        mind: {
-            value: 30,
-            disposition: DISPOSITION.NEUTRAL
-        },
-        presence: {
-            value: 30,
-            disposition: DISPOSITION.NEUTRAL
-        },
-        grace: {
-            value: 13,
-            disposition: DISPOSITION.NEUTRAL
-        },
-        luck: {
-            value: 30,
->>>>>>> 4ea0ea20e5e1d2f78b4a08062c8a864ada9cb5f4
             disposition: DISPOSITION.NEUTRAL
         }
     },

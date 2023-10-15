@@ -105,7 +105,7 @@ const HealthBox = ({
             
             <div className="b-Progress-Flex">
                 <h2>Tether</h2>
-                <span>{currentTether} {"->"} {currentTether + CalculateTetherRest()} / {CalculateTether()}</span>
+                {/* <span>{currentTether} {"->"} {currentTether + CalculateTetherRest()} / {CalculateTether()}</span> */}
                 <div className="b-ProgressBarGrid" >
                     <div className="b-ProgressBar-Text b-ProgressBarLayered">
                         <input className="b-ProgressBar-Input" value={currentTether} onChange={ChangeTether} type="number"/>

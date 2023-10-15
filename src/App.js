@@ -21,11 +21,6 @@ import ProviderWrapper from './shared/pages/ProviderWrapper';
 
 function App() {
 
-
-  
-
-  
-
   return (
     <div className="App">
         <UserProvider>

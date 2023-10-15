@@ -19,6 +19,9 @@ import { createHttpLink } from 'apollo-link-http';
 import MyCharacters from '../../sites/character-builder/pages/MyCharacters'
 import NewCharacter from '../../sites/character-builder/pages/NewCharacter'
 import TalentsPage from '../../sites/character-builder/pages/dev/TalentsPage'
+import { ThemeProvider } from '@emotion/react';
+
+import {GenericTheme} from '../styles/mui/generic_styles'
 
 
 
@@ -61,31 +64,33 @@ const ProviderWrapper = ({children}) => {
 
     return (
         <ApolloProvider client={clientOverride ?? client}>
-          <BrowserRouter>
-          <PageWrapper>
-                <Routes>
-                  <Route index element={<ReferenceHome />} />
-                  <Route path="reference" >
-                      <Route index element={<ReferenceHome />} />
-                  </Route>
-                  <Route path="spells" element={<SpellsHome />}/>
-                  <Route path="builder">
-                    <Route index element={<BuilderHome />}/>
-                    <Route path="my-characters" element={<MyCharacters/>}/>
-                    <Route path="new" element={<NewCharacter />}/>
-                    <Route path="dev">
-                        <Route path="talents" element={<TalentsPage />}/>
-                    </Route>
-                  </Route>
-                  <Route path="account">
-                      <Route index element={<AccountHome />}/>
-                      <Route path="login" element={<LoginPage />} />
-                      <Route path="logout" element={<LogoutPage/>}/>
-                  </Route>
-                  <Route path="*" element={<NotFound />}/>
-                </Routes>
-              </PageWrapper>
-            </BrowserRouter>
+            <ThemeProvider theme={GenericTheme}>
+                <BrowserRouter>
+                    <PageWrapper>
+                        <Routes>
+                        <Route index element={<ReferenceHome />} />
+                        <Route path="reference" >
+                            <Route index element={<ReferenceHome />} />
+                        </Route>
+                        <Route path="spells" element={<SpellsHome />}/>
+                        <Route path="builder">
+                            <Route index element={<BuilderHome />}/>
+                            <Route path="my-characters" element={<MyCharacters/>}/>
+                            <Route path="new" element={<NewCharacter />}/>
+                            <Route path="dev">
+                                <Route path="talents" element={<TalentsPage />}/>
+                            </Route>
+                        </Route>
+                        <Route path="account">
+                            <Route index element={<AccountHome />}/>
+                            <Route path="login" element={<LoginPage />} />
+                            <Route path="logout" element={<LogoutPage/>}/>
+                        </Route>
+                        <Route path="*" element={<NotFound />}/>
+                        </Routes>
+                    </PageWrapper>
+                </BrowserRouter>
+            </ThemeProvider>
         </ApolloProvider>
     )
 }

@@ -1,0 +1,26 @@
+.r-KeywordTag {
+    display: inline;
+
+    .r-KeywordTag-Text {
+        font-weight: bold;
+
+        &:hover {
+            color:rgb(81, 103, 152);
+        }
+    }
+
+    
+
+}
+
+.r-KeywordTag-TooltipTitle {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 4px;
+}
+
+.r-KeywordTag-TooltipDesc {
+    font-size: 1.25em;
+    margin-bottom: 4px;
+}

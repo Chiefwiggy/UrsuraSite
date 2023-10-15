@@ -1,7 +1,5 @@
 import { UserContext } from "./UserContext"
 import { useState } from "react";
-import App from "../../../App";
-import ProviderWrapper from "../../pages/ProviderWrapper";
 
 const UserProvider = ({user, children}) => {
 

@@ -1,0 +1,91 @@
+@import "_variables";
+
+.r-SpellCard-Preview {
+
+    display: flex;
+    justify-content: center;
+
+    .r-SpellCard-Preview-Grid {
+        background-color: hsla(0,0%,100%,.12);
+        display: grid;
+        grid-template-columns: $spell_table_rows;
+        padding: 12px;
+        width: 100%;
+        cursor: pointer;
+        align-items: center;
+        text-transform: capitalize;
+
+        .grid-item {
+            display: flex;
+            justify-content: left;
+            color: hsla(0, 0%, 100%, 0.85);
+        }
+
+        .name-display {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            
+                
+
+            #spell-name {
+                font-size: 1.2em;
+                font-weight: 700;
+                color: white;
+            }
+
+            #name-data {
+                font-size: 0.9em;
+                font-weight: 400;
+                color: hsla(0, 0%, 100%, 0.5);
+                
+            }
+        }
+    } 
+}
+
+
+.r-SpellCard-Detailed {
+
+    background-color: hsla(0,0%,100%,.075);
+   
+
+    .r-SpellCard-Details-Closed {
+        display: none;
+    }
+
+    .r-SpellCard-Details {
+        padding: 24px 12px;
+        
+
+        .r-SpellCard-Details-Header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            text-transform: capitalize;
+
+            .r-SpellCard-Details-HeaderItem {
+                padding: 4px;
+
+                .r-SpellCard-Title {
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .r-SpellCard-Details-Description {
+            padding: 12px;
+        }
+
+    }
+}
+
+.r-SpellCard-DividerLine {
+    height: 2px;
+    background-color: #bb86fc;
+    margin: 8px 30px !important;
+}
+
+.r-SpellCard-Paragraph {
+    text-align: left;
+    margin-bottom: 1em;
+}

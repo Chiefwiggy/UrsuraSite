@@ -1,11 +1,11 @@
 import SiteBar from "../../../shared/views/SiteBar";
 
+import '../styles/StandardPage.scss';
 
 const StandardPage = ({children}) => {
     return (
-        <div className="r-Page-Standard">
+        <div className="s-Page-Standard">
             <SiteBar currentPage={"spells"} />
-            tesla
             {children}
         </div>
     )
