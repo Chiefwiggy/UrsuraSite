@@ -1,0 +1,14 @@
+@import "../../../shared/styles/_variables";
+
+.a-AdminPage {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    height: $fullpage_height_no_header;
+}
+
+.a-AdminContent {
+    width: 100%;
+}
+
+

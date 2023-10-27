@@ -1,0 +1,54 @@
+@import "../../../shared/styles/_variables";
+
+.r-SearchModule {
+    position: absolute;
+    right: 0;
+    height: $fullpage_height_no_header;
+    background-color: #232323;
+    border-left: 2px solid #bb86fc;
+}
+
+.r-SearchAccordion {
+    margin-top: 20px;
+    width: 1000px;
+}
+
+.r-SearchPanelHeader {
+    display: flex;
+    justify-content: flex-start;
+    padding: 12px;
+    background-color: #232323;
+    height: 3rem;
+}
+
+.r-FilterIconButtonPane {
+    padding: 20px 12px;
+}
+
+.r-FilterIconButtonPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.r-FilteringSubmodule {
+    background-color: #232323;
+    padding: 12px;
+    height: 100%;
+}
+
+.r-FilteringFlexbox {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+}
+
+.r-FilteringButtonPanel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+

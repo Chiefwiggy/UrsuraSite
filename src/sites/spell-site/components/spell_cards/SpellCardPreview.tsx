@@ -3,6 +3,7 @@ import {SpellData } from '../../types/spell_type';
 
 import '../../styles/SpellCard.scss';
 import { SpellText } from './SpellCard';
+import TetherIcon from '../icons/TetherIcon';
 
 interface SpellCardTypes {
     spell_data: SpellData,
@@ -42,7 +43,7 @@ const SpellCardPreview = ({
                 <div className="grid-item">{casting_time_text}</div>
                 <div className="grid-item">{duration_text}</div>
                 <div className="grid-item">{range_text}</div>
-                <div className="grid-item">{uses_per_text}</div>
+                <div className="grid-item"><span>{uses_per_text} <TetherIcon /></span></div>
             </div>
             
         </div>

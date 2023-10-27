@@ -1,80 +1,84 @@
 
 export enum CAST_TIME {
-    STANDARD,
-    QUICK,
-    LONG, 
-    FREE,
-    RITUAL_SHORT,
-    RITUAL_LONG,
-    DOWNTIME,
-    OTHER
+    STANDARD = "STANDARD",
+    QUICK = "QUICK",
+    LONG = "LONG", 
+    FREE = "FREE",
+    RITUAL_SHORT = "RITUAL_SHORT",
+    RITUAL_LONG = "RITUAL_LONG",
+    DOWNTIME = "DOWNTIME",
+    OTHER = "OTHER"
 }
 
 export enum ARCANOTYPE {
-    ANIMUS,
-    AXUM,
-    DIVINE,
-    ELEMENTAL,
-    EONIC, 
-    ESOTERIC,
-    MYSTICAL,
-    PRIMAL
+    ANIMUS = "ANIMUS",
+    AXUM = "AXUM",
+    DIVINE = "DIVINE",
+    ELEMENTAL = "ELEMENTAL",
+    EONIC = "EONIC",
+    MYSTICAL = "MYSTICAL",
+    PRIMAL = "PRIMAL",
+    ESOTERIC = "ESOTERIC"
 }
 
 export enum TIME_UNIT {
-    INSTANT,
-    ROUNDS,
-    MINUTES,
-    HOURS,
-    DAYS
+    INSTANT = "INSTANT",
+    ROUNDS = "ROUNDS",
+    MINUTES = "MINUTES",
+    HOURS = "HOURS",
+    DAYS = "DAYS"
 }
 
 export enum RESET_TIME_UNIT {
-    PER_TURN,
-    PER_ENCOUNTER,
-    PER_REST,
-    PER_RECOVERY,
-    PER_DAY,
-    AT_WILL,
-    SPECIAL
+    PER_TURN = "PER_TURN",
+    PER_ENCOUNTER = "PER_ENCOUNTER",
+    PER_REST = "PER_REST",
+    PER_RECOVERY = "PER_RECOVERY",
+    PER_DAY = "PER_DAY",
+    AT_WILL = "AT_WILL",
+    SPECIAL = "SPECIAL"
 }
 
 export enum DAMAGE_TYPE {
-    MAGICAL,
-    PHYSICAL,
-    RAW,
-    PENETRATING,
-    HEALING,
-    NONE,
-    OTHER
+    MAGICAL = "MAGICAL",
+    PHYSICAL = "PHYSICAL",
+    RAW = "RAW",
+    PENETRATING = "PENETRATING",
+    HEALING = "HEALING",
+    NONE = "NONE",
+    OTHER = "OTHER"
 }
 
 export enum ATTRIBUTE {
-    MIGHT,
-    AGILITY,
-    SKILL,
-    AWARENESS,
-    VITALITY,
-    KNOWLEDGE,
-    MIND,
-    PRESENCE,
-    AUTHORITY,
-    ENDURANCE,
-    LUCK,
-    NONE
+    MIGHT = "MIGHT",
+    AGILITY = "AGILITY",
+    SKILL = "SKILL",
+    AWARENESS = "AWARENESS",
+    VITALITY = "VITALITY",
+    KNOWLEDGE = "KNOWLEDGE",
+    MIND = "MIND",
+    PRESENCE = "PRESENCE",
+    AUTHORITY = "AUTHORITY",
+    ENDURANCE = "ENDURANCE",
+    LUCK = "LUCK",
+    NONE = "NONE"
 }
 
 export enum RANGE_UNIT {
-    RANGED,
-    MELEE,
-    OTHER
+    RANGED = "RANGED",
+    MELEE = "MELEE",
+    RANGED_SPECIAL = "RANGED_SPECIAL",
+    MELEE_SPECIAL = "MELEE_SPECIAL",
+    OTHER = "OTHER"
 }
 
 export enum TARGET_UNIT {
-    INDIVIDUALS,
-    COMMANDERS,
-    BATTALIONS,
-    HEXES
+    INDIVIDUALS = "INDIVIDUALS",
+    COMMANDERS = "COMMANDERS",
+    BATALLIONS = "BATALLIONS",
+    HEXES = "HEXES",
+    SPECIAL = "SPECIAL",
+    OTHER = "OTHER"
 }
 
 

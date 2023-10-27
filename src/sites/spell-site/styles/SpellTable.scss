@@ -1,10 +1,11 @@
-@import "_variables";
+@import "../../../shared/styles/_variables";
 
 .r-SpellTable {
 
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    //margin-top: 30px;
+    padding-top: 30px;
 
     .r-SpellTable-AlignFix {
         display: flex;

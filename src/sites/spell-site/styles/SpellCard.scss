@@ -1,4 +1,4 @@
-@import "_variables";
+@import "../../../shared/styles/_variables";
 
 .r-SpellCard-Preview {
 
@@ -63,17 +63,19 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
             text-transform: capitalize;
 
-            .r-SpellCard-Details-HeaderItem {
-                padding: 4px;
+            
+        }
 
-                .r-SpellCard-Title {
-                    font-weight: 700;
-                }
-            }
+        .r-SpellCard-Details-DescriptionBox {
+            padding: 12px;
+            display: grid;
+            grid-template-columns: 3fr 1fr 13fr;
+            
         }
 
         .r-SpellCard-Details-Description {
-            padding: 12px;
+            padding: 12px 64px 12px 0;
+            //min-height: 8em;
         }
 
     }
@@ -85,7 +87,23 @@
     margin: 8px 30px !important;
 }
 
+.r-SpellCard-HorizontalDividerLine {
+    width: 2px;
+    height: 100%;
+    background-color: #88cc85;
+}
+
 .r-SpellCard-Paragraph {
     text-align: left;
     margin-bottom: 1em;
+}
+
+.r-SpellCard-Details-HeaderItem {
+    padding: 4px;
+    text-transform: capitalize;
+
+    .r-SpellCard-Title {
+        font-weight: 700;
+    }
+
 }

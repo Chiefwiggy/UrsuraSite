@@ -1,0 +1,43 @@
+{
+    "spellData": {
+      "spell_name": "Blazing Jet",
+      "spell_level": 1,
+      "cast_time": "STANDARD",
+      "prep_cost": 4,
+      "prep_uses": 2,
+      "free_cost": 3,
+      "arcanotype": "ELEMENTAL",
+      "spell_duration": 0,
+      "spell_duration_unit": "INSTANT",
+      "isRoleplay": false,
+      "reset_condition": "PER_ENCOUNTER",
+      "spell_damage": {
+        "base_damage": 22,
+        "damage_type": "MAGICAL",
+        "damage_subtype": "fire"
+      },
+      "save_type": "AGILITY",
+      "spell_range": {
+        "standard_range": {
+          "min_range": {
+            "range_unit": "MELEE",
+            "range_value": 0
+          },
+          "max_range": {
+            "range_unit": "MELEE",
+            "range_value": 0
+          }
+        }
+      },
+      "spell_targets": {
+        "target_unit": "HEXES",
+        "target_count": 1,
+        "target_description": null
+      },
+      "damage_attribute": "MIGHT",
+      "attribute_multiplier": 2,
+      "spell_description": [
+        "Shooting forth from your hands a flame which engulfs the hex before you in roaring flames. When you [Cast]{keyword:spells:cast], designate a [Target Hex]{keyword:spells:target_hex} for the flames to erupt onto. When the spell [Resolves]{keyword:spells:resolve}, each creature must make an [Agility]{keyword:attributes:agility} [Spell Contest]{keyword:spells:spell_contest. Each creature which fails takes 22 + twice your [Might]{keyword:attributes:might} [Magical]{keyword:damage:magical} (fire) damage. Each successful creature takes 22 [Magical]{keyword:damage:magical} (fire) damage instead."
+      ]
+    }
+  }

@@ -67,9 +67,9 @@ const SpellCard = ({
         const casting_time_text = (CAST_TIME[cast_time]).toLocaleLowerCase().split('_').join(' - ');
         const duration_text = `${spell_duration > 0 ? spell_duration : ""} ${(TIME_UNIT[spell_duration_unit]).toLocaleLowerCase().slice(0,-1)}${spell_duration > 1 ? "s" : ""}${spell_duration_unit === TIME_UNIT.INSTANT ? "t" : ""}`
         const range_text = `${min_range.range_unit == RANGE_UNIT.MELEE ? "M" : "R"}${min_range.range_value} - ${max_range.range_unit == RANGE_UNIT.MELEE ? "M" : "R"}${max_range.range_value}`
-        const uses_per_text = `${prep_uses}U / ${prep_cost}T`
+        const uses_per_text = `${prep_uses}U / ${prep_cost}`
         const targets_text = `${target_count} ${TARGET_UNIT[target_unit].toLocaleLowerCase().slice(0,-1)}${target_count > 1 ? "s" : ""} ${target_description ? '(' + target_description + ')' : ''}`;
-        const free_cast_text = `${free_cost}T`
+        const free_cast_text = `${free_cost}`
         
         const newSpellText: SpellText = {level_text, arcanotype_text, casting_time_text, duration_text, range_text, uses_per_text, targets_text, free_cast_text};
         setCurrentSpellText(newSpellText);

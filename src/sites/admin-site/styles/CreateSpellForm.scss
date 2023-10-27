@@ -1,0 +1,29 @@
+.a-CreateSpellFormPage {
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.a-CreateSpellForm {
+    width: 1200px;
+}
+
+.a-SpellDetailsRow {
+    padding: 12px 0;
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+}
+
+.a-SpellDescription {
+    width: 100%;
+}
+
+.f-FormikElement {
+    text-align: left;
+    
+}
+

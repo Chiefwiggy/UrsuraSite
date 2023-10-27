@@ -1,5 +1,5 @@
 import React from 'react';
-import { SpellData } from '../../types/spell_type';
+import { DAMAGE_TYPE, SpellData } from '../../types/spell_type';
 
 import '../../styles/SpellCard.scss';
 import { SpellText } from './SpellCard';
@@ -21,7 +21,7 @@ const SpellCardDetailed = ({
 }: SpellCardTypes)  => {
 
     const {level_text, arcanotype_text, casting_time_text, duration_text, uses_per_text, range_text, targets_text, free_cast_text} = spell_text;
-    const {spell_description, spell_name} = spell_data;
+    const {spell_description, spell_name, save_type, spell_damage, attribute_multiplier} = spell_data;
 
     const ExpandSpellDescription = () => {
 
@@ -58,12 +58,23 @@ const SpellCardDetailed = ({
                         <DetailHeaderItem detail_header={"Casting Time"} detail_text={casting_time_text} />
                         <DetailHeaderItem detail_header={"Arcanotype"} detail_text={arcanotype_text} />
                         <DetailHeaderItem detail_header={"Targets"} detail_text={targets_text} />
-                        <DetailHeaderItem detail_header={"Uses / Tether"} detail_text={uses_per_text} />
-                        <DetailHeaderItem detail_header={"Free Cast"} detail_text={free_cast_text} />
+                        <DetailHeaderItem detail_header={"Uses / Tether"} detail_text={uses_per_text} tether_trail={true} />
+                        <DetailHeaderItem detail_header={"Free Cast"} detail_text={free_cast_text} tether_trail={true}/>
                     </div>
                     <div className="r-SpellCard-DividerLine"></div>
-                    <div className="r-SpellCard-Details-Description">
-                        {ExpandSpellDescription()}
+                    <div className="r-SpellCard-Details-DescriptionBox">
+                        <div className="r-SpellCard-Details-Specifics">
+                            <DetailHeaderItem detail_header={"Contest Type"} detail_text={
+                                save_type?.toLocaleLowerCase()
+                            } doShow={save_type !== "NONE"}/>
+                            <DetailHeaderItem detail_header={`${spell_damage?.damage_type.toLocaleLowerCase()} ${spell_damage?.damage_type !== DAMAGE_TYPE.HEALING ? "Damage" : ""}`} detail_text={
+                                `${spell_damage?.base_damage} ${attribute_multiplier > 0 ? `+ ${attribute_multiplier} × MHT` : ""}`
+                            } doShow={spell_damage?.base_damage+attribute_multiplier > 0}/>
+                        </div>
+                        <div className="r-SpellCard-HorizontalDividerLine"></div>
+                        <div className="r-SpellCard-Details-Description">
+                            {ExpandSpellDescription()}
+                        </div>
                     </div>
                 </div>              
             </div>

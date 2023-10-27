@@ -20,6 +20,9 @@ import MyCharacters from '../../sites/character-builder/pages/MyCharacters'
 import NewCharacter from '../../sites/character-builder/pages/NewCharacter'
 import TalentsPage from '../../sites/character-builder/pages/dev/TalentsPage'
 import { ThemeProvider } from '@emotion/react';
+import AdminHome from '../../sites/admin-site/pages/AdminHome'
+import CreateSpellPage from '../../sites/admin-site/pages/CreateSpellPage';
+import KeywordManagerPage from '../../sites/admin-site/pages/KeywordManagerPage';
 
 import {GenericTheme} from '../styles/mui/generic_styles'
 
@@ -28,14 +31,13 @@ import {GenericTheme} from '../styles/mui/generic_styles'
 const ProviderWrapper = ({children}) => {
 
     const [clientOverride, setClientOverride] = useState(undefined);
-    const {loggedIn} = useUser();
+    const {loggedIn, accessLevel} = useUser();
 
    
 
     const client = new ApolloClient({
         uri: 'http://localhost:3333/graphql',
         cache: new InMemoryCache(),
-        
     });
 
     
@@ -51,6 +53,7 @@ const ProviderWrapper = ({children}) => {
     }
 
     useEffect(() => {
+        
         if (sessionStorage.getItem("userToken")) {
             ReinstateClient();
         } else {
@@ -68,25 +71,30 @@ const ProviderWrapper = ({children}) => {
                 <BrowserRouter>
                     <PageWrapper>
                         <Routes>
-                        <Route index element={<ReferenceHome />} />
-                        <Route path="reference" >
                             <Route index element={<ReferenceHome />} />
-                        </Route>
-                        <Route path="spells" element={<SpellsHome />}/>
-                        <Route path="builder">
-                            <Route index element={<BuilderHome />}/>
-                            <Route path="my-characters" element={<MyCharacters/>}/>
-                            <Route path="new" element={<NewCharacter />}/>
-                            <Route path="dev">
-                                <Route path="talents" element={<TalentsPage />}/>
+                            <Route path="reference" >
+                                <Route index element={<ReferenceHome />} />
                             </Route>
-                        </Route>
-                        <Route path="account">
-                            <Route index element={<AccountHome />}/>
-                            <Route path="login" element={<LoginPage />} />
-                            <Route path="logout" element={<LogoutPage/>}/>
-                        </Route>
-                        <Route path="*" element={<NotFound />}/>
+                            <Route path="spells" element={<SpellsHome />}/>
+                            <Route path="builder">
+                                <Route index element={<BuilderHome />}/>
+                                <Route path="my-characters" element={<MyCharacters/>}/>
+                                <Route path="new" element={<NewCharacter />}/>
+                                <Route path="dev">
+                                    <Route path="talents" element={<TalentsPage />}/>
+                                </Route>
+                            </Route>
+                            <Route path="account">
+                                <Route index element={<AccountHome />}/>
+                                <Route path="login" element={<LoginPage />} />
+                                <Route path="logout" element={<LogoutPage/>}/>
+                            </Route>
+                            <Route path="admin">
+                                <Route index element={<AdminHome />} />
+                                <Route path="create-spell" element={<CreateSpellPage />} />
+                                <Route path="keyword-manager" element={<KeywordManagerPage />} />
+                            </Route>
+                            <Route path="*" element={<NotFound />}/>
                         </Routes>
                     </PageWrapper>
                 </BrowserRouter>

@@ -1,0 +1,21 @@
+.a-AdminSideBar {
+    width: 200px;
+    background-color: #343434;
+    height: 100%;
+}
+
+.a-AdminLinkBar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 12px;
+
+    .a-PageLinkButton {
+        
+        .a-PageLink {
+            //color: white;
+            text-decoration: none;
+        }
+    }
+
+}

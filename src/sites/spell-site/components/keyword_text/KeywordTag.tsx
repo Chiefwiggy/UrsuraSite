@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import useKeyword from '../../hooks/useKeyword'
+import useKeyword from '../../hooks/useKeyword/useKeyword'
 
 import { Keyword } from '../../types/keyword_types'
 

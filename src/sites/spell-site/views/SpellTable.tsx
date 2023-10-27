@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import SpellCard from "../components/spell_cards/SpellCard";
-
+import { useQuery } from '@apollo/client';
 import '../styles/SpellTable.scss';
-
-import { SAMPLE_SPELL_LIST_1 } from "../sample_data/sample_spells";
-import SpellTableFooter from './SpellTableFooter';
+import GET_ALL_SPELLS from '../queries/GET_ALL_SPELLS';
+import useSearchCriteria from '../hooks/useSearchCriteria/useSearchCriteria';
 
 const SpellTable = () => {
 
+    const {currentSpells} = useSearchCriteria();
 
     return (
         <div className="r-SpellTable">
@@ -23,11 +23,12 @@ const SpellTable = () => {
                 </div>
                 <div className="r-SpellTable-SpellCards">
                 {
-                    SAMPLE_SPELL_LIST_1.map(spell => {
+                    currentSpells.length > 0 ? currentSpells.map(spell => {
                         return (
                             <SpellCard spell_data={spell} key={"SPELL_DATA_"+spell.spell_name} />
                         )
                     })
+                    : <div><br /><p>Uh oh! Looks like there are no spells that fit this criteria</p></div>
                 }
                 </div>
             </div>

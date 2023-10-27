@@ -1,12 +1,17 @@
+import { useLazyQuery } from "@apollo/client";
 import { UserContext } from "./UserContext"
 import { useState } from "react";
+import GET_ACCESS_LEVEL from '../../queries/GET_ACCESS_LEVEL'
+import { useEffect } from "react";
 
 const UserProvider = ({user, children}) => {
 
     const [loggedIn, setLoggedIn] = useState(false);
+    const [accessLevel, setAccessLevel] = useState(0);
 
     const LogoutUser = () => {
         sessionStorage.clear()
+        setAccessLevel(0);
         setLoggedIn(false);
     }
 
@@ -15,8 +20,13 @@ const UserProvider = ({user, children}) => {
         sessionStorage.setItem("userName", user_data.response.username);
         sessionStorage.setItem("userID", user_data.response._id);
         sessionStorage.setItem("userEmail", user_data.response.email)
+        console.log(user_data);
+        setAccessLevel(user_data.response.access_level);
         setLoggedIn(true);
     }
+
+
+    
 
     const GetUserData = () => {
         return {
@@ -28,7 +38,7 @@ const UserProvider = ({user, children}) => {
     }
 
     return (
-        <UserContext.Provider value={{LogoutUser, LoginUser, GetUserData, loggedIn}}>
+        <UserContext.Provider value={{LogoutUser, LoginUser, GetUserData, loggedIn, accessLevel}}>
             {children}
         </UserContext.Provider>
     )

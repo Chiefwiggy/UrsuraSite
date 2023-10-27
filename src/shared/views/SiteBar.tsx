@@ -3,10 +3,15 @@ import { Link } from "react-router-dom"
 import useUser from '../hooks/user-hook/useUser'
 import { AppBar, Avatar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
 
-
 import '../styles/SiteBar.scss';
 
-const PAGES = [
+interface PAGE_DATA {
+    title: string,
+    url: string,
+    access_level?: number
+} 
+
+const PAGES: Array<PAGE_DATA> = [
     {
         title: "Reference",
         url: "/"
@@ -18,6 +23,11 @@ const PAGES = [
     {
         title: "Sheets",
         url: "/builder/my-characters"
+    },
+    {
+        title: "Admin",
+        url: "/admin",
+        access_level: 3
     }
 ]
 
@@ -35,7 +45,7 @@ const ACCOUNT_SETTINGS = [
 
 const SiteBar = ({currentPage}) => {
 
-    const {loggedIn, GetUserData} = useUser();
+    const {loggedIn, GetUserData, accessLevel} = useUser();
 
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -50,15 +60,13 @@ const SiteBar = ({currentPage}) => {
     return (
         <div className="SiteBar">
         
-            <AppBar position="static"
-                sx={{bgcolor: '#232323'}}
-            >
+            <AppBar position="static">
                 <Toolbar>
                 <Typography
                     variant="h6"
                     noWrap
                     component="a"
-                    href="#app-bar-with-responsive-menu"
+                    href="/"
                     sx={{
                     mr: 2,
                     display: { xs: 'none', md: 'flex' },
@@ -74,13 +82,16 @@ const SiteBar = ({currentPage}) => {
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
                         {
                             PAGES.map((page) => {
+                                if (accessLevel < page?.access_level ?? 0) return <div key={page.title+page.url}></div>
                                 return (
-                                    <Button
-                                        key={page.url}
-                                        sx={{ my: 2, color: 'white', display: 'block' }}
-                                    >
-                                        <Link className="SiteBar-Link" to={page.url}>{page.title}</Link>
-                                    </Button>
+                                    <Link className="SiteBar-Link" to={page.url} key={page.url}>
+                                        <Button
+                                            
+                                            sx={{ my: 2, color: 'white', display: 'block' }}
+                                        >
+                                            {page.title}
+                                        </Button>
+                                    </Link>
                                 )
                             })
                         }
@@ -124,12 +135,14 @@ const SiteBar = ({currentPage}) => {
                             
                         </Box> :
                         <Box>
-                            <Button
-                                key={'login-link-xxxwe43213123'}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                <Link className="SiteBar-Link" to={'/account/login'}>Login</Link>
-                            </Button>
+                            <Link className="SiteBar-Link" to={'/account/login'}>
+                                <Button
+                                    key={'login-link-xxxwe43213123'}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    Login
+                                </Button>
+                            </Link>
                         </Box>
                     }
 

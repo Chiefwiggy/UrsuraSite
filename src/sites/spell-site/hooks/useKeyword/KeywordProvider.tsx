@@ -1,8 +1,8 @@
-import { KEYWORDS_EXAMPLE } from "../sample_data/sample_keywords";
+import { KEYWORDS_EXAMPLE } from "../../sample_data/sample_keywords";
 import { KeywordContext } from "./KeywordContext";
 import React, { useEffect, useState } from "react";
 
-import {Keyword} from '../types/keyword_types';
+import {Keyword} from '../../types/keyword_types';
 
 const badKeyword: Keyword = {
     id: "ERROR",
